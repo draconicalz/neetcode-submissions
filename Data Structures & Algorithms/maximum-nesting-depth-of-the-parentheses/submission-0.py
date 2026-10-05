@@ -1,0 +1,9 @@
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        res = 0
+        cur = 0
+        for c in s:
+            if c == "(": cur += 1
+            if c == ")": cur -= 1
+            res = max(cur, res)
+        return res
